@@ -5,7 +5,9 @@ import numpy as np
 import warnings
 warnings.filterwarnings("ignore")
 
-gmaps = googlemaps.Client(key='AIzaSyDBO8sGBqk8aAs9OhvTdpsr0rSEURemOVk')
+api_key = input("Enter Google API key: ")
+
+gmaps = googlemaps.Client(key=api_key)
 
 # reload saved kmeans data from file
 file = open('C:/Users/Johanson Onyegbula/Documents/Masters in NRES/Spring 2023/CS_691/Project/vacation-planner/important', 'rb')
