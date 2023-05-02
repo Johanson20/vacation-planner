@@ -24,6 +24,9 @@ jobs:
           context: .
           push: true
           tags: johansono/vacation-planner:v1.0.1
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASS }}
 
       - name: Deploy the Docker image
         uses: appleboy/ssh-action@master
