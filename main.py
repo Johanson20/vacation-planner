@@ -1,3 +1,7 @@
+import os.path
+import sys
+sys.path.append(os.getcwd())
+
 from Recommender import *
 
 if __name__ == "__main__":

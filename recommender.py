@@ -1,7 +1,7 @@
 # install and import googlemaps api
 #pip install googlemaps
 import os, googlemaps, pickle, json
-import warnings
+import warnings, pandas, sklearn
 warnings.filterwarnings("ignore")
 
 
@@ -9,7 +9,7 @@ class Recommender:
     def __init__(self):
         self.gmaps = None
         self.categories = ['Movie theater', 'Art gallery', 'Clothing stores', 'University', 'Bars', 'Shopping malls', 'Museum', 'Stadium', 'Zoo', 'Points of interest', 'Tourist attractions', 'Parks']
-        file = open(os.path.join(os.getcwd(), 'important'), 'rb')
+        file = open('important', 'rb')
         kmeans, Y = pickle.load(file)
         file.close()
         self.test_user = Y.loc[0:1,]

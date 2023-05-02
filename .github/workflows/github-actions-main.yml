@@ -42,7 +42,7 @@ jobs:
         context: .
         push: true
         tags:
-          - my-docker-registry/my-app:${{ github.sha }}
+          - johansono/vacation-planner:v1.0.0:${{ github.sha }}
 
     - name: Deploy the Docker image
       uses: appleboy/ssh-action@master
@@ -52,4 +52,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASS }}
         script: |
           docker pull my-docker-registry/my-app:${{ github.sha }}
-          docker run -d --name my-app -p 80:80 my-docker-registry/my-app:${{ github.sha }}
+          docker run -d --name johansono/vacation-planner:v1.0.0 -p 80:80 johansono/vacation-planner:v1.0.0:${{ github.sha }}
