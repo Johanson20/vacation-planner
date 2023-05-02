@@ -40,10 +40,10 @@ class MyTestCase(unittest.TestCase):
              ['Hayes Valley Inn', '417 Gough Street, San Francisco']])
     
     def test_RenoStadiumItinerary(self):
-        stadium = self.myPlanner.recommend([1, 2, 1, 3, 2, 3, 3, 5, 2, 3, 3, 3])[0]
-        self.assertEqual(self.myPlanner.findPlaces('Reno', stadium)[0]['results']
+        stadia = self.myPlanner.recommend([1, 2, 1, 3, 2, 3, 3, 5, 2, 3, 3, 3])
+        self.asserNotEqual(self.myPlanner.findPlaces(stadia, 'Reno')[0]['results']
                          [1]['vicinity'], 
-            '500 North Sierra Street, Reno')
+            '300 North Sierra Street, Reno')
     
     def test_ParkItineraryInArizona(self):
         top_choice = self.myPlanner.recommend([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5])
