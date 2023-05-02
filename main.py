@@ -1,4 +1,4 @@
-from Recommender import *
+from Recommender import Recommender
 
 if __name__ == "__main__":
     myPlanner = Recommender()

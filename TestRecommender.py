@@ -1,9 +1,5 @@
 import unittest
-import os.path
-import sys
-sys.path.append(os.getcwd())
-
-from Recommender import *
+from Recommender import Recommender
 
 
 class MyTestCase(unittest.TestCase):
