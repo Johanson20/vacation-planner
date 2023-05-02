@@ -1,4 +1,7 @@
 import unittest
+import os, googlemaps, pickle, json
+import warnings, pandas, sklearn
+warnings.filterwarnings("ignore")
 from Recommender import Recommender
 
 
