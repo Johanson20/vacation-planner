@@ -1,4 +1,8 @@
 import unittest
+import os.path
+import sys
+sys.path.append(os.getcwd())
+
 from Recommender import *
 
 
