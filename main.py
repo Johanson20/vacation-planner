@@ -1,24 +1,20 @@
 from Recommender import Recommender
 import googlemaps
 import json
+import ast
 import warnings
+import os
 warnings.filterwarnings("ignore")
 
 if __name__ == "__main__":
     myPlanner = Recommender()
-    api_key = input("Enter Google API key: ")
+    api_key = os.environ.get('arg1')
     myPlanner.gmaps = googlemaps.Client(key=api_key)
 
-    suggestions = []
-    city = input('Enter city name: ')
-    print('On a scale of 1-5, rate your interest in these kind of locations', 
-          '(1 = not interested, 3 = neutral, 5 = very interested)' )
+    city = os.environ.get('arg2')
+    suggestions = ast.literal_eval(os.environ.get('arg3'))
 
-    for i in range(12):
-        rating = input(myPlanner.categories[i] + ": ")
-        suggestions.append(int(rating))
-
-    print("These are your ranked category of sites in decreasing preference:")
+    print("\nThese are your ranked category of sites in decreasing preference:")
     print(myPlanner.recommend(suggestions))
 
     places_found = myPlanner.findPlaces(suggestions, city)

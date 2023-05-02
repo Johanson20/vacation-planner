@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout the repository
@@ -23,7 +23,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: johansono/vacation-planner:v1.0.0
+          tags: johansono/vacation-planner:v1.0.1
 
       - name: Deploy the Docker image
         uses: appleboy/ssh-action@master
@@ -33,4 +33,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASS }}
           script: |
             docker pull my-docker-registry/my-app:${{ github.sha }}
-            docker run -d --name johansono/vacation-planner:v1.0.0 -p 80:80 johansono/vacation-planner:v1.0.0:${{ github.sha }}
+            docker run -d --name johansono/vacation-planner:v1.0.1 -p 80:80 johansono/vacation-planner:v1.0.1:${{ github.sha }}
