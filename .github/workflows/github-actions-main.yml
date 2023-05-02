@@ -24,11 +24,11 @@ jobs:
       - name: Run tests
         run: |
           pip install googlemaps scikit-learn pandas coverage
-          python3 -m coverage run TestRecommender.py 
+          coverage run TestRecommender.py 
           
       - name: Coverage report
         run: |
-          python3 coverage report -m
+          coverage report -m
 
   build-and-deploy:
     runs-on: ubuntu-latest
