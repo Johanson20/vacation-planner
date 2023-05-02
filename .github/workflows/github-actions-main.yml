@@ -30,13 +30,3 @@ jobs:
           context: .
           push: true
           tags: johansono/vacation-planner:v1.0.1
-        
-      - name: Deploy the Docker image
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.DOCKER_REPO  }}
-          username: ${{ secrets.DOCKER_USERNAME  }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          script: |
-            docker pull my-docker-registry/my-app:${{ github.sha }}
-            docker run -d --name johansono/vacation-planner:v1.0.1 -p 80:80 johansono/vacation-planner:v1.0.1:${{ github.sha }}
