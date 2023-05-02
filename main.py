@@ -1,8 +1,8 @@
+from Recommender import Recommender
 import googlemaps
 import json
 import warnings
 warnings.filterwarnings("ignore")
-from Recommender import Recommender
 
 if __name__ == "__main__":
     myPlanner = Recommender()

@@ -1,8 +1,8 @@
+from Recommender import Recommender
 import unittest
 import googlemaps
 import warnings
 warnings.filterwarnings("ignore")
-from Recommender import Recommender
 
 
 class MyTestCase(unittest.TestCase):
