@@ -41,7 +41,7 @@ class MyTestCase(unittest.TestCase):
     
     def test_RenoStadiumItinerary(self):
         stadia = self.myPlanner.recommend([1, 2, 1, 3, 2, 3, 3, 5, 2, 3, 3, 3])
-        self.asserNotEqual(self.myPlanner.findPlaces(stadia, 'Reno')[0]['results']
+        self.assertNotEqual(self.myPlanner.findPlaces(stadia, 'Reno')[0]['results']
                          [1]['vicinity'], 
             '300 North Sierra Street, Reno')
     
