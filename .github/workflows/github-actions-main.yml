@@ -24,7 +24,7 @@ jobs:
       - name: Run tests
         run: |
           pip install googlemaps scikit-learn pandas pytest pytest-cov
-          pytest TestRecommender.py --secret-value "${{ secrets.API }}" --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+          pytest TestRecommender.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
   build-and-deploy:
     runs-on: ubuntu-latest
