@@ -22,4 +22,3 @@ if __name__ == "__main__":
 
     print("\nThe following places are recommended to go to:\n", 
           json.dumps(itinerary, indent = 4, ensure_ascii=False))
-
