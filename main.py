@@ -20,6 +20,6 @@ if __name__ == "__main__":
     places_found = myPlanner.findPlaces(suggestions, city)
     itinerary = myPlanner.showItinerary(places_found,  6)    #2-day vacation
 
-    print("\nThe following places are recommended to visit:\n", 
+    print("\nThe following places are recommended to go to:\n", 
           json.dumps(itinerary, indent = 4, ensure_ascii=False))
 
